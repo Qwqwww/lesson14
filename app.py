@@ -1,5 +1,8 @@
 from flask import Flask, render_template, request
 
+from process import get_prediction
+
+
 app = Flask(__name__)
 
 
@@ -7,7 +10,10 @@ app = Flask(__name__)
 def hello():
     if request.method == "POST":
         area = request.form.get("area")
-        print(area)
+        area = float(area)
+        cost = get_prediction(area)
+        print(cost)
+        
     return render_template("index.html")
 
 
