@@ -17,6 +17,3 @@ def hello():
         message = f"Стоимость квартиры площадью {area} кв.м. равна {cost} рублей."
     return render_template("index.html", message=message)
 
-
-if __name__ == "__main__":
-    app.run()
